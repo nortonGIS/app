@@ -1,11 +1,10 @@
 import os
 from humboldt.settings.base import *
 
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = 'postgres'
+
 DEBUG = False
 # ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
-
+SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
 
 

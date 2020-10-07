@@ -7,7 +7,7 @@ DEBUG = False
 # ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
 SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default=get_random_secret_key())
-ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
+ALLOWED_HOSTS = ["https://pacific-citadel-37612.herokuapp.com"]
 
 
 INSTALLED_APPS.extend(["whitenoise.runserver_nostatic"])

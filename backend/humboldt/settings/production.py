@@ -5,8 +5,8 @@ from django.core.management.utils import get_random_secret_key
 
 DEBUG = False
 # ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default=get_random_secret_key())
+SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default=get_random_secret_key())
 ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
 
 

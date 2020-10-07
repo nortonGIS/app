@@ -40,7 +40,9 @@ WORKDIR /app
 RUN apt-get update &&\
     apt-get install -y binutils libproj-dev gdal-bin python-gdal python3-gdal
 
-RUN python3 backend/manage.py collectstatic --noinput
+RUN DJANGO_SETTINGS_MODULE=humboldt.settings.production \
+    SECRET_KEY=@f1r3st0rm \
+    python3 backend/manage.py collectstatic --noinput
 
 EXPOSE $PORT
 

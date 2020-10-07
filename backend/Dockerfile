@@ -11,9 +11,9 @@ RUN pip3 install --upgrade pip -r requirements.txt
 # Add the rest of the code
 COPY . /app/backend
 
-# Setup GDAL
-RUN apt-get update &&\
-    apt-get install -y binutils libproj-dev gdal-bin python-gdal python3-gdal
+# # Setup GDAL
+# RUN apt-get update &&\
+#     apt-get install -y binutils libproj-dev gdal-bin python-gdal python3-gdal
 
 # Make port 8000 available for the app
 EXPOSE 8000

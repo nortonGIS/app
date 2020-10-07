@@ -44,6 +44,6 @@ RUN DJANGO_SETTINGS_MODULE=humboldt.settings.production \
     SECRET_KEY=@f1r3st0rm \
     python3 backend/manage.py collectstatic --noinput
 
-EXPOSE 3000
+EXPOSE $PORT
 
-CMD python3 backend/manage.py runserver 0.0.0.0:3000
+CMD python3 backend/manage.py runserver $PORT

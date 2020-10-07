@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  db:
+    image: postgis/postgis
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  backend:
+    build: ./backend
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    environment:
+      - DJANGO_SETTINGS_MODULE=humboldt.settings.development
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      # One-way volume to use node_modules from inside image
+      - /app/frontend/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    tty: true
+    command: npm start

@@ -1,11 +1,13 @@
 import os
 from humboldt.settings.base import *
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = '@(5psz&8fxu85lnz*9m4fzs4(08e+c#f0=roovhx!tdgr0*n0b'
 DEBUG = False
 # ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
 
 ALLOWED_HOSTS = [os.environ.get("PRODUCTION_HOST")]
+
 
 INSTALLED_APPS.extend(["whitenoise.runserver_nostatic"])
 
